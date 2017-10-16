@@ -1,0 +1,38 @@
+:host {
+    display:flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    width: 100%;
+}
+
+span {
+    font-size: 28px;
+}
+
+.subjects-page-head {
+    display:flex;
+    flex: 0 0 35px;
+    flex-direction: row;
+    font-family:  "Trebuchet MS";
+    padding: 5px;
+}
+
+.subjects-page-head span {
+    color: #3f51b5;
+    flex: 1 1 auto;
+}
+
+.subjects-page-head button {
+    flex: 0 1 auto;
+}
+
+.subjects-page-content {
+    flex: 1 1 auto;
+    overflow:scroll;
+    padding: 5px;
+}
+
+.subjects-page-create {
+    flex: 1 0 auto;
+    padding: 5px;
+}

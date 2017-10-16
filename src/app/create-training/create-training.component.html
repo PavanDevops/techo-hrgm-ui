@@ -1,0 +1,33 @@
+<md-card>
+    <md-card-header>
+      <md-card-title><h3>Create New Training</h3></md-card-title>
+    </md-card-header>
+    <md-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+        <div>
+          <label>Name</label>
+          <md-form-field>
+            <input mdInput
+                   class="name-field"
+                   type="text" 
+                   formControlName="name" />
+          </md-form-field> 
+        </div>
+        <div>
+          <label>Type</label>
+          <md-select name="type"
+                     class="type-field"
+                     formControlName="type">
+            <md-option value="" disabled>Please choose a training type</md-option>
+            <md-option *ngFor="let type of types"
+                       [value]="type">{{type}}
+            </md-option>
+          </md-select>
+        </div>
+        <button type="submit"
+                [disabled]="!form.valid"
+                md-raised-button>Create Training</button>
+      </form>
+    </md-card-content>
+  </md-card>
+  

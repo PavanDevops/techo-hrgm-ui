@@ -1,0 +1,31 @@
+<section class="subjects-page-head">
+  <span>Subjects</span>
+  <button md-raised-button
+          *ngIf="!creatingNew"
+          (click)="onAddClick()"
+          color="primary">Add New Subject
+  </button>
+</section>
+<section  class="subjects-page-create"
+          *ngIf="creatingNew">
+     <create-subject [skills]="skills$ | async"
+                     (cancel)="onCancel()"
+                     (createSubject)="onCreateSubject($event)">
+    </create-subject>
+</section>
+
+<section class="subjects-page-content"
+         *ngIf="!creatingNew">
+    <subject-list [subjects]="subjects$ | async"
+                  (select)="selectedSubject = $event;"
+                  (delete)="onDeleteSubject($event)"></subject-list>
+</section>
+  <!-- <subject-list [subjects]="subjects$ | async"
+                (select)="selectedSubject = $event;">
+  </subject-list>
+  <subject-detail [subject]="selectedSubject"
+                  (updateSubject)="onUpdateSubject($event)"></subject-detail> -->
+
+
+
+

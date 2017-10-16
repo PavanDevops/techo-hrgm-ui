@@ -1,0 +1,19 @@
+<div class="techocamp-app">
+  <md-toolbar color="primary">
+    <h1><span>techocamp</span></h1>
+
+    <span class="header-spacer"></span>
+
+    <md-nav-list>
+      <a md-button [routerLink]="['']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Home</a>
+      <!-- <a md-button [routerLink]="['/subjects']" [routerLinkActive]="['active']">Subjects</a>
+      <a md-button [routerLink]="['/trainings']" [routerLinkActive]="['active']">Trainings</a> -->
+      <a md-button [routerLink]="['/wall-of-fame']" [routerLinkActive]="['active']">Wall Of Fame</a>
+    </md-nav-list>
+  </md-toolbar>
+  <section class="app-body-wrapper">
+    <router-outlet></router-outlet>
+  </section>
+</div>
+
+

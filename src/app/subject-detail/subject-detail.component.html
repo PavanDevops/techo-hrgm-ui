@@ -1,0 +1,35 @@
+<h3>Subject Details</h3>
+<em *ngIf="!subject">Please select a subject to see details</em>
+<md-card *ngIf="subject">
+    <md-card-content>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+            <div>
+                <label>Name:</label>
+                <md-form-field>
+                    <input mdInput
+                        class="name-field"
+                        type="text" 
+                        formControlName="name"/>
+                </md-form-field> 
+            </div>
+        <!-- <div>
+            <label>Type</label>
+            <md-select name="type"
+                        class="type-field"
+                        formControlName="type">
+            <md-option value="" disabled>Please choose a training type</md-option>
+            <md-option *ngFor="let type of types"
+                        [value]="type">{{type}}
+            </md-option>
+            </md-select>
+        </div> -->
+        <button type="submit"
+                [disabled]="!form.valid && !form.dirty"
+                md-raised-button>Update</button>
+        <button [disabled]="!form.dirty"
+                md-raised-button
+                (click)="revert()">Cancel</button>
+        </form>
+    </md-card-content>
+</md-card>
+      

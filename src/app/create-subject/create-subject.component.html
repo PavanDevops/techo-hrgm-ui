@@ -1,0 +1,43 @@
+<md-card>
+  <md-card-header>
+    <md-card-title><h3>Create Subject</h3></md-card-title>
+  </md-card-header>
+  <md-card-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <div class="create-subject-formGroup">
+      <label class="create-subject-name-label">Name</label>
+      <md-form-field>
+      <input mdInput
+             class="create-subject-name-field"
+             type="text" 
+             formControlName="name" />
+      </md-form-field>      
+    </div>
+    <div class="create-subject-formGroup">
+        <!-- <label class="create-subject-skills-label">Skill</label> -->
+        <!-- <select name="skill"
+                class="create-subject-skills-field"
+                formControlName="skill">
+                <option value="" disabled>Please choose a skill to map to this subject</option>
+                <option *ngFor="let skill of skills" 
+                        [ngValue]="skill">{{skill.name}}</option>
+        </select> -->
+
+<label class="create-subject-skills-label">Skill</label>
+<md-select name="skill"
+        class="create-subject-skills-field"
+        formControlName="skill">
+<md-option value="" disabled>Please choose a skill to map to this subject</md-option>
+<md-option *ngFor="let skill of skills"
+           [value]="skill">{{skill.name}}
+</md-option>
+</md-select>
+</div>
+<button type="submit"
+        [disabled]="!form.valid"
+        md-raised-button>Create Subject</button>
+<button md-raised-button
+        (click)="onCancel()">Cancel</button>
+</form>
+  </md-card-content>
+</md-card>

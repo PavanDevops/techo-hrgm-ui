@@ -1,0 +1,25 @@
+:host {
+    overflow:scroll;
+}
+
+p {
+    margin:0px;
+    padding:0px;
+    font-size: 10px;
+}
+
+md-list-item {
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.subject-list-item {
+    margin-bottom: 10px;
+}
+
+.subject-list-item:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);
+}
+
+.selected {
+    background-color: yellow;
+}

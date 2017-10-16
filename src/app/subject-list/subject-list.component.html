@@ -1,0 +1,9 @@
+<md-card *ngFor="let subject of subjects" 
+         class="subject-list-item"
+         (click)="selected = subject; select.emit(subject);"
+         [class.selected]="selected && (subject.id === selected.id)">
+    <md-card-content>
+        {{ subject.name}}
+        <button (click)="delete.emit(subject)">delete</button>
+    </md-card-content>
+</md-card>

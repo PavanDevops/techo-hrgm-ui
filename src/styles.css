@@ -1,0 +1,18 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body, html {
+    background-color:#eef4f9;
+    font-family: "Trebuchet MS";
+    height:100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+p {
+    color: #000;
+    font-size: 28px;
+}
+
+.mat-button-wrapper {
+    font-family: "Trebuchet MS";
+}
